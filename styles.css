@@ -207,4 +207,93 @@ body {
     text-align: center;
     font-weight: 500;
     text-shadow: none;
+
+}
+
+
+
+/* =========================================
+   移动端适配代码 (Mobile Responsive)
+   当屏幕宽度小于 768px (手机/平板) 时生效
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. 调整整体布局 */
+    body {
+        padding-top: 5vh; /* 手机上顶部留空少一点 */
+        align-items: flex-start; /* 避免内容过多时顶部被切掉 */
+        height: auto; /* 允许页面滚动 */
+    }
+
+    .container {
+        width: 100%; /* 占满屏幕宽度 */
+        padding: 15px; /* 左右留一点缝隙 */
+    }
+
+    /* 2. 缩小巨大的时钟 */
+    .time {
+        font-size: 60px; /* 从 110px 缩小到 60px，防止撑爆屏幕 */
+        letter-spacing: 0;
+    }
+
+    .date {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    .header {
+        margin-bottom: 30px; /* 减少时间与搜索框的距离 */
+    }
+
+    /* 3. 优化搜索框 */
+    .search-box {
+        width: 100%; /* 搜索框占满宽度 */
+        padding: 15px; /* 减少内边距 */
+        border-radius: 15px;
+    }
+
+    .search-input {
+        font-size: 16px; /* 防止 iOS 输入时自动放大 */
+    }
+
+    .quick-links {
+        flex-wrap: wrap; /* 链接太多时自动换行 */
+        gap: 15px 10px; /* 控制换行后的间距 */
+    }
+
+    /* 4. 调整分类按钮 */
+    .category-nav {
+        gap: 8px; /* 按钮挤一点 */
+        margin-bottom: 20px;
+    }
+
+    .category-pill {
+        padding: 6px 15px; /* 按钮变小一点 */
+        font-size: 13px;
+    }
+
+    /* 5. 图标网格 (最关键的部分) */
+    .link-grid {
+        padding: 15px; /* 减少网格内边距 */
+        gap: 10px; /* 减少卡片间距 */
+        
+        /* 强制手机显示 3 列 (如果您想显示 4 列，把 3 改成 4 即可) */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .link-card {
+        padding: 15px 5px; /* 卡片变紧凑 */
+    }
+
+    .icon-bg {
+        width: 40px; /* 图标背景变小 */
+        height: 40px;
+        font-size: 20px; /* 图标本身变小 */
+        border-radius: 10px;
+    }
+
+    .link-name {
+        font-size: 12px; /* 文字变小 */
+        margin-top: 5px;
+    }
 }
