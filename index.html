@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2887 START PAGE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="time" id="current-time">--:--</div>
+            <div class="date" id="current-date">正在加载日期...</div>
+        </div>
+
+        <form class="search-box" id="search-form">
+            <div class="search-input-group">
+                <select class="search-engine-select" id="search-engine">
+                    <option value="google">Google</option>
+                    <option value="baidu">百度</option>
+                    <option value="bing">Bing</option>
+                    <option value="duckduckgo">DuckGo</option>
+                </select>
+                <input type="text" id="search-input" placeholder="搜索或输入网址... (按 '/')" class="search-input" autocomplete="off">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="quick-links">
+                <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>
+                <a href="https://weather.com/zh-CN/weather/today/" target="_blank">天气</a>
+                <a href="https://news.google.com/" target="_blank">新闻</a>
+                <a href="https://translate.google.com/" target="_blank">翻译</a>
+            </div>
+        </form>
+
+        <div class="category-nav">
+            <span class="category-pill active" data-target="all">全部</span>
+            <span class="category-pill" data-target="social">社交</span>
+            <span class="category-pill" data-target="entertainment">娱乐</span>
+            <span class="category-pill" data-target="office">办公</span>
+            <span class="category-pill" data-target="dev">开发</span>
+            <span class="category-pill" data-target="tools">工具</span>
+        </div>
+
+        <div class="link-grid" id="grid-container">
+            
+            <a href="https://wx.qq.com/" target="_blank" class="link-card" data-category="social">
+                <div class="icon-bg" style="background-color: #5dbe48;"><i class="fab fa-weixin"></i></div>
+                <div class="link-name">微信网页版</div>
+            </a>
+            <a href="https://weibo.com/" target="_blank" class="link-card" data-category="social">
+                <div class="icon-bg" style="background-color: #e51636;"><i class="fab fa-weibo"></i></div>
+                <div class="link-name">微博</div>
+            </a>
+            <a href="https://www.zhihu.com/" target="_blank" class="link-card" data-category="social">
+                <div class="icon-bg" style="background-color: #0077ff;"><i class="fab fa-zhihu"></i></div>
+                <div class="link-name">知乎</div>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="link-card" data-category="social">
+                <div class="icon-bg" style="background-color: #000000;"><i class="fab fa-x-twitter"></i></div>
+                <div class="link-name">Twitter / X</div>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="link-card" data-category="social">
+                <div class="icon-bg" style="background-color: #c13584;"><i class="fab fa-instagram"></i></div>
+                <div class="link-name">Instagram</div>
+            </a>
+            <a href="https://discord.com/" target="_blank" class="link-card" data-category="social">
+                <div class="icon-bg" style="background-color: #5865f2;"><i class="fab fa-discord"></i></div>
+                <div class="link-name">Discord</div>
+            </a>
+
+            <a href="https://www.bilibili.com/" target="_blank" class="link-card" data-category="entertainment">
+                <div class="icon-bg" style="background-color: #fb7299;"><i class="fa-brands fa-bilibili"></i></div>
+                <div class="link-name">Bilibili</div>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="link-card" data-category="entertainment">
+                <div class="icon-bg" style="background-color: #ff0000;"><i class="fab fa-youtube"></i></div>
+                <div class="link-name">YouTube</div>
+            </a>
+            <a href="https://www.netflix.com/" target="_blank" class="link-card" data-category="entertainment">
+                <div class="icon-bg" style="background-color: #e50914;"><i class="fas fa-film"></i></div>
+                <div class="link-name">Netflix</div>
+            </a>
+            <a href="https://open.spotify.com/" target="_blank" class="link-card" data-category="entertainment">
+                <div class="icon-bg" style="background-color: #1ed760;"><i class="fab fa-spotify"></i></div>
+                <div class="link-name">Spotify</div>
+            </a>
+            <a href="https://www.douyu.com/" target="_blank" class="link-card" data-category="entertainment">
+                <div class="icon-bg" style="background-color: #ff5d23;"><i class="fas fa-gamepad"></i></div>
+                <div class="link-name">Douyu</div>
+            </a>
+            <a href="https://www.twitch.tv/" target="_blank" class="link-card" data-category="entertainment">
+                <div class="icon-bg" style="background-color: #9146ff;"><i class="fab fa-twitch"></i></div>
+                <div class="link-name">Twitch</div>
+            </a>
+
+            <a href="https://mail.google.com/" target="_blank" class="link-card" data-category="office">
+                <div class="icon-bg" style="background-color: #ea4335;"><i class="fas fa-envelope"></i></div>
+                <div class="link-name">Gmail</div>
+            </a>
+            <a href="https://www.notion.so/" target="_blank" class="link-card" data-category="office">
+                <div class="icon-bg" style="background-color: #2f3437;"><i class="fas fa-file-lines"></i></div>
+                <div class="link-name">Notion</div>
+            </a>
+            <a href="https://drive.google.com/" target="_blank" class="link-card" data-category="office">
+                <div class="icon-bg" style="background-color: #4285f4;"><i class="fab fa-google-drive"></i></div>
+                <div class="link-name">Google Drive</div>
+            </a>
+            <a href="https://zoom.us/" target="_blank" class="link-card" data-category="office">
+                <div class="icon-bg" style="background-color: #2d8cff;"><i class="fas fa-video"></i></div>
+                <div class="link-name">Zoom</div>
+            </a>
+            <a href="https://chat.openai.com/" target="_blank" class="link-card" data-category="office">
+                <div class="icon-bg" style="background-color: #10a37f;"><i class="fas fa-bolt"></i></div>
+                <div class="link-name">ChatGPT</div>
+            </a>
+            <a href="https://www.deepl.com/" target="_blank" class="link-card" data-category="office">
+                <div class="icon-bg" style="background-color: #0f2b46;"><i class="fas fa-language"></i></div>
+                <div class="link-name">DeepL</div>
+            </a>
+
+            <a href="https://github.com/" target="_blank" class="link-card" data-category="dev">
+                <div class="icon-bg" style="background-color: #24292e;"><i class="fab fa-github"></i></div>
+                <div class="link-name">GitHub</div>
+            </a>
+            <a href="https://stackoverflow.com/" target="_blank" class="link-card" data-category="dev">
+                <div class="icon-bg" style="background-color: #f48024;"><i class="fab fa-stack-overflow"></i></div>
+                <div class="link-name">Stack Overflow</div>
+            </a>
+            <a href="https://vercel.com/" target="_blank" class="link-card" data-category="dev">
+                <div class="icon-bg" style="background-color: #000000;"><i class="fas fa-caret-up"></i></div>
+                <div class="link-name">Vercel</div>
+            </a>
+            <a href="https://developer.mozilla.org/" target="_blank" class="link-card" data-category="dev">
+                <div class="icon-bg" style="background-color: #000000;"><i class="fas fa-book-open"></i></div>
+                <div class="link-name">MDN Web Docs</div>
+            </a>
+            <a href="https://www.figma.com/" target="_blank" class="link-card" data-category="dev">
+                <div class="icon-bg" style="background-color: #a259ff;"><i class="fab fa-figma"></i></div>
+                <div class="link-name">Figma</div>
+            </a>
+            <a href="https://huggingface.co/" target="_blank" class="link-card" data-category="dev">
+                <div class="icon-bg" style="background-color: #ffd21e;"><i class="fas fa-face-smile"></i></div>
+                <div class="link-name">Hugging Face</div>
+            </a>
+
+            <a href="https://maps.google.com/" target="_blank" class="link-card" data-category="tools">
+                <div class="icon-bg" style="background-color: #34a853;"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="link-name">Google Maps</div>
+            </a>
+            <a href="https://www.speedtest.net/" target="_blank" class="link-card" data-category="tools">
+                <div class="icon-bg" style="background-color: #141526;"><i class="fas fa-gauge-high"></i></div>
+                <div class="link-name">Speedtest</div>
+            </a>
+            <a href="https://www.photopea.com/" target="_blank" class="link-card" data-category="tools">
+                <div class="icon-bg" style="background-color: #188a7c;"><i class="fas fa-paintbrush"></i></div>
+                <div class="link-name">Photopea</div>
+            </a>
+            <a href="https://tinypng.com/" target="_blank" class="link-card" data-category="tools">
+                <div class="icon-bg" style="background-color: #000000;"><i class="fas fa-compress"></i></div>
+                <div class="link-name">TinyPNG</div>
+            </a>
+            <a href="https://www.taobao.com/" target="_blank" class="link-card" data-category="tools">
+                <div class="icon-bg" style="background-color: #ff5000;"><i class="fas fa-bag-shopping"></i></div>
+                <div class="link-name">淘宝</div>
+            </a>
+            <a href="https://www.jd.com/" target="_blank" class="link-card" data-category="tools">
+                <div class="icon-bg" style="background-color: #e1251b;"><i class="fas fa-cart-shopping"></i></div>
+                <div class="link-name">京东</div>
+            </a>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
